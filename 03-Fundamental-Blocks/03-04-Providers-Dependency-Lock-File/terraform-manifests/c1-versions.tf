@@ -1,14 +1,11 @@
-# Terraform Settings Block
+# Terraform Block
 terraform {
-  # Terraform Version
-  required_version = ">= 1.4.1"
+  required_version = ">= 0.13.1"
   required_providers {
-    # AWS Provider 
     aws = {
-      source  = "hashicorp/aws"
-      version = ">= 2.0.0"
+      source = "hashicorp/aws"
+      version = ">= 4.3.0"
     }
-    # Random Provider
     random = {
       source  = "hashicorp/random"
       version = "3.0.0"
@@ -18,6 +15,11 @@ terraform {
 
 # Provider Block
 provider "aws" {
-  region = "us-east-1"
-  profile = "default" # Defining it for default profile is Optional
+  region = "us-east-1"  
+  profile = "default" 
 }
+
+/*
+Note-1:  AWS Credentials Profile (profile = "default") configured on your local desktop terminal  
+$HOME/.aws/credentials
+*/
